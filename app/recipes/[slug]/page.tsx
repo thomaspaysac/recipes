@@ -3,8 +3,8 @@ import { serif } from "@/app/lib/fonts";
 import { recipesList } from "@/app/lib/recipes";
 import { formatTotalTime } from "@/app/lib/functions";
 
-export default function RecipePage ({ params: {slug} }) {
-  const recipe = recipesList.find((el) => el.slug === slug);
+export default function RecipePage ({params} : {params: {slug: string}}) {
+  const recipe = recipesList.find((el) => el.slug === params.slug);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
