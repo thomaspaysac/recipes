@@ -7,13 +7,13 @@ export default function RecipePage ({params} : {params: {slug: string}}) {
   const recipe = recipesList.find((el) => el.slug === params.slug);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex flex-col bg-white rounded-xl w-fit p-8">
+    <main className="flex min-h-screen flex-col items-center justify-between md:p-16">
+      <div className="flex flex-col bg-white md:rounded-xl w-fit p-8">
         <Image src={`/recipes/${recipe?.slug}.png`} height={200} width={600} alt="" className="rounded-xl self-center" />
         <div className={`font-bold text-3xl my-4 tracking-wide ${serif.className}`}>
           {recipe?.name}
         </div>
-        <div className="bg-rose-50 p-4 rounded my-4 leading-relaxed">
+        <div className="bg-rose-50 p-4 rounded mb-4 leading-relaxed">
           <h3 className="font-semibold text-red-900">Temps de préparation</h3>
           <ul className="list-disc list-inside text-sm">
             <li><span className="font-semibold">Total :</span> {formatTotalTime(recipe?.temps.preparation, recipe?.temps.cuisson)}</li>
